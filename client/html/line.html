@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Visit Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Visit Status</h2>
+        <div class="visit-info">
+            <p><strong>Name:</strong> <span>{{name}}</span></p>
+            <p><strong>Position in Queue:</strong>>{{position}}</span></p>
+            <p><strong>Waiting Time:</strong> <span>{{wait_time}} minutes</span></p>
+            <p><strong>Estimated Time Left:</strong> <span>{{est_wait}} minutes</span></p>
+        </div>
+    </div>
+</body>
+</html>

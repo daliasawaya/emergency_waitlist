@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a class="add-btn" href="/admin/add">Add Patient</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name of Patient</th>
+                    <th>Associated Code</th>
+                    <th>Severity</th>
+                    <th>Waiting Time (mins)</th>
+                    <th>Mark as Treated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for p in patients:%}
+                    <tr>
+                        <td>
+                            {{p['name']}}
+                        </td>
+                        <td>
+                            {{p['code']}}
+                        </td>
+                        <td>
+                            {{p['severity']}}
+                        </td>
+                        <td>
+                            {{p['waiting_for_mins']}}
+                        </td>
+                        <td>
+                            <a class="treat-btn" href="/admin/treat/{{p['id']}}">Mark as Treated</a>
+                        </td>
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
